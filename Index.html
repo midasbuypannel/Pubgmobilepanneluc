@@ -1,32 +1,96 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Pubg Mobile UC Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MidasBuyPannel</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #ffcc00, #ff6600);
+      color: white;
       text-align: center;
       padding: 40px;
     }
-    h1 { color: #007bff; }
-    .btn {
-      display: inline-block;
-      background: #007bff;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
+
+    .card {
+      background: rgba(255,255,255,0.15);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      max-width: 400px;
+      margin: auto;
     }
-    .btn:hover { background: #0056b3; }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      text-shadow: 1px 1px 3px black;
+    }
+
+    input, select, button {
+      width: 90%;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      outline: none;
+      font-size: 16px;
+    }
+
+    input, select {
+      background: rgba(255,255,255,0.2);
+      color: white;
+    }
+
+    button {
+      background: #ffcc00;
+      color: black;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: white;
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 14px;
+      opacity: 0.8;
+    }
   </style>
 </head>
 <body>
-  <h1>Welcome to PUBG UC Panel ⚡</h1>
-  <p>Yahan aap apna UC ya reward claim kar sakte hain.</p>
-  <a href="https://example.com" class="btn">Claim UC</a>
+  <div class="card">
+    <h1>MidasBuyPannel 💎</h1>
+    <p>Enter your details to proceed</p>
+    <form id="ucForm">
+      <input type="text" id="username" placeholder="Enter your PUBG username" required>
+      <input type="number" id="playerid" placeholder="Enter your Player ID" required>
+      <select id="ucamount" required>
+        <option value="">Select UC Amount</option>
+        <option value="7000">7000 UC</option>
+        <option value="15000">15000 UC</option>
+        <option value="20000">20000 UC</option>
+        <option value="40000">40000 UC</option>
+      </select>
+      <button type="submit">Submit Request</button>
+    </form>
+  </div>
+
+  <footer>© 2019 MidasBuyPannel </footer>
+
+  <script>
+    document.getElementById('ucForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('username').value;
+      const id = document.getElementById('playerid').value;
+      const uc = document.getElementById('ucamount').value;
+
+      alert(`Request Sent!\n\nUsername: ${name}\nPlayer ID: ${id}\nUC Amount: ${uc}`);
+    });
+  </script>
 </body>
 </html>
-
